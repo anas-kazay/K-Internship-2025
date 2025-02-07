@@ -7,7 +7,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   <html>
   <style>
 tr{ height: 40px }
-h1 {
+h1,h2 {
   font-family: Arial, Helvetica, sans-serif;
 }
 </style>
@@ -23,6 +23,7 @@ h1 {
         <th>Rating</th>
       </tr>
       <xsl:for-each select="category[@name='Fiction']/book">
+      <xsl:sort select="year"/>
         <tr>
           <td><xsl:value-of select="title"/></td>
           <td><xsl:value-of select="author"/></td>
@@ -40,6 +41,7 @@ h1 {
         <th>Rating</th>
       </tr>
       <xsl:for-each select="category[@name='Non-Fiction']/book">
+      <xsl:sort select="year"/>
         <tr>
           <td><xsl:value-of select="title"/></td>
           <td><xsl:value-of select="author"/></td>
